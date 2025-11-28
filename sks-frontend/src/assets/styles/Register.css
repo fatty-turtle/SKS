@@ -1,0 +1,247 @@
+/* ---- KÍCH THƯỚC & CĂN GIỮA ---- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+:root { --reg-width: 340px; }
+
+body, html, #root {
+  height: 100%;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+}
+
+/* căn giữa card giữa màn hình */
+.d-flex.justify-content-center.align-items-center {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 100vh !important;
+  padding: 0 !important;
+}
+
+/* ---- CARD ---- */
+.d-flex.justify-content-center.align-items-center > .card.p-4.shadow-sm {
+  width: calc(var(--reg-width) + 80px) !important;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  padding: 30px !important;
+  background: #ffffff;
+}
+
+/* ---- TIÊU ĐỀ ---- */
+h3.text-center.mb-3.fw-bold {
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 0.6px;
+  border: none;
+  margin-bottom: 18px !important;
+  text-align: center;
+  color: #2c2c2c;
+}
+
+/* ---- INPUT GROUP ---- */
+.p-4.shadow-sm form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.p-4.shadow-sm form .mb-3,
+.p-4.shadow-sm form .form-group {
+  width: var(--reg-width);
+  margin-bottom: 15px;
+}
+
+
+/* ---- INPUT FIELD ---- */
+.p-4.shadow-sm .form-control {
+  border: 1px solid #d9d9d9 !important;
+  border-radius: 8px !important;
+  padding: 12px 14px !important;
+  font-size: 0.95rem;
+  background: #fff !important;
+  box-shadow: none !important;
+  color: #222;
+  transition: all 0.2s ease;
+}
+
+.p-4.shadow-sm .form-control::placeholder {
+  color: #a0a0a0;
+}
+
+.p-4.shadow-sm .form-control:focus {
+  border-color: #6a11cb !important;
+  box-shadow: 0 0 0 3px rgba(106,17,203,0.15) !important;
+  outline: none;
+}
+
+/* ---- NÚT “NEXT” / “SIGN UP” ---- */
+/* .p-4.shadow-sm .btn-success1 {
+  width: var(--reg-width) !important;
+  margin-top: 10px;
+  border: none !important;
+  border-radius: 6px !important;
+  background: linear-gradient(135deg, #2b2b2b 0%, #202020 100%) !important;
+  color: #fff !important;
+  font-weight: 600;
+  padding: 12px 0 !important;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+} */
+
+.p-4.shadow-sm .btn-success1:hover {
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+}
+
+.p-4.shadow-sm .btn-success1:active {
+  transform: translateY(1px);
+}
+
+/* ---- FOOTER ---- */
+.p-4.shadow-sm .text-center.mt-3 p {
+  width: var(--reg-width);
+  margin: 14px auto 0;
+  font-size: 0.93rem;
+  color: #555;
+  text-align: left;
+}
+
+.p-4.shadow-sm .text-center.mt-3 a {
+  color: #2575fc;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.p-4.shadow-sm .text-center.mt-3 a:hover {
+  text-decoration: underline;
+}
+
+
+
+/* === CĂN CHÍNH GIỮA TOÀN BỘ NỘI DUNG TRONG FORM === */
+.p-4.shadow-sm form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;        /* căn giữa các phần tử con */
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+}
+
+/* Mỗi nhóm input (Form.Group) căn giữa và không bị lệch */
+.p-4.shadow-sm form .mb-3,
+.p-4.shadow-sm form .form-group {
+  width: 100%;
+  max-width: var(--reg-width);
+  margin: 0 auto 15px auto;   /* căn giữa và tạo khoảng cách đều */
+  text-align: left;           /* label và placeholder vẫn căn trái */
+}
+
+
+/* Nút Sign Up khớp với input */
+.p-4.shadow-sm .btn-success1 {
+  display: block;
+  width: 100%;
+  max-width: var(--reg-width);
+  margin: 12px auto 0 auto;   /* căn giữa và tạo khoảng cách đều */
+  border: none !important;
+  border-radius: 6px !important;
+  background: linear-gradient(135deg, #000000 0%, #292929 100%) !important;
+  color: #fff !important;
+  font-weight: 600;
+  padding: 12px 0 !important;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+/* Footer: căn giữa, giữ gọn */
+.p-4.shadow-sm .text-center.mt-3 p {
+  width: 100%;
+  max-width: var(--reg-width);
+  margin: 14px auto 0;
+  font-size: 0.93rem;
+  color: #555;
+  text-align: center;  /* căn giữa dòng Login */
+}
+
+
+
+
+/* ============ RESPONSIVE ============ */
+/* Dùng biến co giãn theo viewport: tối thiểu 260px, tối đa 420px */
+:root {
+  --reg-width: clamp(260px, 86vw, 420px);
+}
+
+/* Card co giãn theo --reg-width, chừa viền thở */
+.d-flex.justify-content-center.align-items-center > .card.p-4.shadow-sm {
+  width: calc(var(--reg-width) + 56px) !important;
+  padding: clamp(20px, 4vw, 32px) !important;
+  border-radius: clamp(10px, 2vw, 14px);
+  margin: env(safe-area-inset-top) env(safe-area-inset-right)
+          env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+
+/* Khối input và nút luôn khớp bề rộng */
+.p-4.shadow-sm form .mb-3,
+.p-4.shadow-sm form .form-group,
+.p-4.shadow-sm .btn-success1,
+.p-4.shadow-sm .text-center.mt-3 p {
+  width: var(--reg-width) !important;
+  /* max-width: 100%; */
+}
+
+/* Tăng khả năng chạm trên mobile */
+/* .p-4.shadow-sm .form-control {
+  padding: clamp(10px, 2.8vh, 14px) 14px !important;
+  font-size: clamp(14px, 2.6vw, 16px);
+} */
+.p-4.shadow-sm .btn-success1 {
+  padding: clamp(12px, 3.2vh, 14px) 0 !important;
+  font-size: clamp(14px, 2.8vw, 16px);
+  border-radius: clamp(6px, 1.6vw, 8px) !important;
+}
+
+/* Tiêu đề co giãn */
+h3.text-center.mb-3.fw-bold {
+  font-size: clamp(18px, 4.8vw, 22px);
+  margin-bottom: clamp(12px, 2.2vh, 18px) !important;
+}
+
+/* Footer co giãn + canh trái giống mock */
+.p-4.shadow-sm .text-center.mt-3 p {
+  font-size: clamp(13px, 2.6vw, 15px);
+  margin-top: clamp(10px, 2vh, 14px);
+  text-align: left;
+}
+
+
+/* Desktop: bỏ hẳn width 100% của Bootstrap */
+
+/* Mobile: giữ 90% */
+@media (max-width: 768px) {
+  .p-4.shadow-sm form .form-control {
+    width: 90% !important;
+    /* margin: 0 auto !important; */
+    display: block;
+  }
+}
+
+
+
+/* Tránh hiệu ứng gây khó chịu với người dùng giảm chuyển động */
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
+
+/* Trạng thái focus rõ ràng, hỗ trợ truy cập */
+/* .p-4.shadow-sm .form-control:focus-visible,
+.p-4.shadow-sm .btn-success1:focus-visible {
+  outline: 3px solid rgba(37,117,252,0.35);
+  outline-offset: 2px;
+} */
+
+
+
+
+

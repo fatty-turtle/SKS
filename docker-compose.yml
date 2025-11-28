@@ -1,0 +1,51 @@
+services:
+  postgres:
+    image: pgvector/pgvector:pg15
+    container_name: sks_postgres_db
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: sks_password
+      POSTGRES_DB: sks
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./sks-backend/init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - sks_network
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    container_name: sks_backend
+    restart: always
+    ports:
+      - "3000:3000"
+    env_file:
+      - ./sks-backend/.env
+    depends_on:
+      - postgres
+    networks:
+      - sks_network
+
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    container_name: sks_frontend
+    restart: always
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend
+    networks:
+      - sks_network
+
+volumes:
+  postgres_data:
+
+networks:
+  sks_network:
+    driver: bridge

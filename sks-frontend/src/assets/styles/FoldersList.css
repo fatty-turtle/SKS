@@ -1,0 +1,45 @@
+.folder-item {
+  transition: all 0.2s ease;
+  border: 1px solid #e6e6e6;
+  border-radius: 8px;
+  margin: 0.25rem 0;
+  padding: 0.5rem 0.75rem;
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.folder-item:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.folder-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.folder-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.folder-details {
+  flex: 1;
+}
+
+.folder-actions {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+}
+
+.fs-12 {
+  font-size: 0.75rem;
+}
+
+.plus-icon {
+  margin-right: 0.5rem;
+}

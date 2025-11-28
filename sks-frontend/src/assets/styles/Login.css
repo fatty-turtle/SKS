@@ -1,0 +1,157 @@
+/* ==== FONT + BACKGROUND ==== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --login-width: clamp(260px, 86vw, 420px);
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #ffffff 0%, #e0e0e0 100%);
+} 
+
+/* ==== CĂN GIỮA KHỐI LOGIN ==== */
+.d-flex.justify-content-center.align-items-center {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 100vh !important;
+  padding: 0 !important;
+}
+
+/* ==== CARD LOGIN ==== */
+.d-flex.justify-content-center.align-items-center > .card.p-4.shadow-sm {
+  width: calc(var(--login-width) + 56px) !important;
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  padding: clamp(20px, 4vw, 32px) !important;
+}
+
+/* ==== TIÊU ĐỀ ==== */
+h3.text-center.mb-3.fw-bold {
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 0.6px;
+  border: none;
+  margin-bottom: clamp(12px, 2vh, 18px) !important;
+  text-align: center;
+  color: #2c2c2c;
+}
+
+/* ==== FORM LAYOUT ==== */
+.p-4.shadow-sm form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.p-4.shadow-sm form .mb-3,
+.p-4.shadow-sm form .form-group {
+  width: 100%;
+  max-width: var(--login-width);
+  margin: 0 auto 15px auto;
+  text-align: left;
+}
+
+/* ==== INPUT ==== */
+.p-4.shadow-sm .form-label {
+  font-weight: 600;
+  color: #2d2d2d;
+}
+
+.p-4.shadow-sm .form-control {
+  width: 100% !important;
+  border: 1px solid #d9d9d9 !important;
+  border-radius: 8px !important;
+  padding: 12px 14px !important;
+  background: #fff !important;
+  box-shadow: none !important;
+  color: #222;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.p-4.shadow-sm .form-control::placeholder {
+  color: #a0a0a0;
+}
+
+.p-4.shadow-sm .form-control:focus {
+  border-color: rgb(0, 174, 255) !important;
+  box-shadow: 0 0 0 3px rgba(106, 17, 203, 0.15) !important;
+  outline: none;
+}
+
+/* ==== BUTTON LOGIN ==== */
+.p-4.shadow-sm .btn-primary {
+  display: block;
+  width: var(--login-width) !important;   /* ✅ thêm dòng này */
+  margin: 12px auto 0 auto;
+  border: none !important;
+  border-radius: 6px !important;
+  background: linear-gradient(135deg, #292929 0%, #000000 100%) !important;
+  color: #fff !important;
+  font-weight: 600;
+  padding: 12px 0 !important;
+  font-size: 1rem;
+  box-shadow: none !important;
+  transition: transform 0.15s ease, filter 0.15s ease;
+}
+
+.p-4.shadow-sm .btn-primary:hover {
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+}
+
+.p-4.shadow-sm .btn-primary:active {
+  transform: translateY(1px);
+}
+
+
+/* ==== FOOTER ==== */
+.p-4.shadow-sm .text-center.mt-3 p {
+  width: 100%;
+  /* max-width: var(--login-width); */
+  margin: 14px auto 0;
+  font-size: 0.93rem;
+  color: #555;
+  text-align: center;
+}
+
+.p-4.shadow-sm .text-center.mt-3 a {
+  color: #000000;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.p-4.shadow-sm .text-center.mt-3 a:hover {
+  text-decoration: underline;
+}
+
+/* ==== RESPONSIVE ==== */
+@media (max-width: 576px) {
+  .d-flex.justify-content-center.align-items-center > .card.p-4.shadow-sm {
+    width: 90% !important;
+    padding: 22px !important;
+  }
+}
+
+@media (max-height: 560px) {
+  .d-flex.justify-content-center.align-items-center {
+    min-height: auto !important;
+    align-items: flex-start !important;
+    padding: 16px !important;
+  }
+}
+
+/* ==== ACCESSIBILITY ==== */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
